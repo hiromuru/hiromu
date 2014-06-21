@@ -1,0 +1,14 @@
+%p#notice= notice
+
+#exam
+  - @skil.exams.each do |e|
+    %p= e.title 
+    %p= simple_format(e.caption)
+    %p= simple_format(e.discription)
+    .image
+      - e.images.each do |img|
+        = image_tag img.image.url.to_s
+        
+= link_to 'Edit', edit_skil_path(@skil)
+\|
+= link_to 'Back', skils_path

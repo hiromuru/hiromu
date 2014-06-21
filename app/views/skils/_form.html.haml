@@ -1,0 +1,19 @@
+= form_for @skil do |f|
+  - if @skil.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@skil.errors.count, "error")} prohibited this skil from being saved:"
+      %ul
+        - @skil.errors.full_messages.each do |msg|
+          %li= msg
+  .field
+    = f.fields_for :image do |img|
+      = img.label :icon
+      = img.file_field :image
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :level
+    = f.number_field :level
+  .actions
+    = f.submit 'Save'

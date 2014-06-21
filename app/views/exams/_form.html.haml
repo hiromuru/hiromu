@@ -1,0 +1,26 @@
+= form_for @exam do |f|
+  - if @exam.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@exam.errors.count, "error")} prohibited this exam from being saved:"
+      %ul
+        - @exam.errors.full_messages.each do |msg|
+          %li= msg
+
+  = f.fields_for :images do |img|
+    = img.label :image
+    = img.file_field :image
+  = f.fields_for :skils do |s|
+    - @skils.each do |sk|
+      = s.check_box :skil_ids, {:checked => @exam.skils.include?(sk), :name => 'exam[skil_ids][]' }, sk.id, " "
+      = sk.name
+  .field
+    = f.label :title
+    = f.text_field :title
+  .field
+    = f.label :caption
+    = f.text_area :caption
+  .field
+    = f.label :discription
+    = f.text_area :discription
+  .actions
+    = f.submit 'Save'
