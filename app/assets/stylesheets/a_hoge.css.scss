@@ -1,0 +1,67 @@
+body {
+  background-color: #071F33;
+}
+
+#container {
+  width: 450px;
+  height: 744px;
+  margin: 0px auto;
+  position: relative;
+  top: 80px;
+}
+
+$h: 744;
+.meishi {
+  background-color: #FFF;
+  width: 450px;
+  height: #{ $h }px;
+  position: relative;
+}
+
+#name {
+  z-index: 400;
+}
+
+#info {
+  position: relative;
+  top: -#{ $h }px;
+  z-index: 300;
+}
+#skil {
+  position: relative;
+  top: -#{ $h * 2 }px;
+  background-color: #071F33;
+  border: 1px solid #FFF;
+  z-index: 200;
+}
+#exam {
+  position: relative;
+  top: -#{ $h * 3 }px;
+  z-index: 0;
+}
+
+span.button {
+  width: 0px;
+  height: 0px;
+  border: 30px solid transparent;
+  border-left: 30px solid #FFF;
+  display: block;
+  margin-left: 485px;
+}
+
+span.button:hover {
+  border-left-color: #D32402;
+}
+
+span.down {
+  width: 0px;
+  height: 0px;
+  border: 30px solid transparent;
+  border-top: 30px solid #FFF;
+  display: block;
+  margin-top: 720px;
+}
+
+span.down:hover {
+  border-top-color: #D32402;
+}
