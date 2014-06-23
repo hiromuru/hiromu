@@ -1,7 +1,19 @@
 #container
-  #name.meishi
-    %span.right.button
-    %span.down
-  #info.meishi
-  #skil.meishi
-  #exam.meishi
+  #wrap
+    #skills
+      #sk
+        %h1 skill
+        - @sk.each do |sk|
+          .sk
+            = image_tag(sk.image.image.url.to_s, :class => "icon", :alt => sk.level, :title => if sk.exams.size != 0 then skilpath_path(sk.name) else "" end )
+            %p= sk.name
+      #sf
+        %h1 software
+        - @sf.each do |sf|
+          .sf
+            = image_tag(sf.image.image.url.to_s, :class => "icon", :alt => sf.level, :title => if sf.exams.size != 0 then skilpath_path(sf.name) else "" end)
+            %p= sf.name 
+      #namehold
+      #iconhold
+      #levelhold
+  %span.down

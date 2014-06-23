@@ -15,5 +15,8 @@
   .field
     = f.label :level
     = f.number_field :level
+  .field
+    = f.label :sors
+    = f.select :sors, ["skill","soft"]
   .actions
     = f.submit 'Save'

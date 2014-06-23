@@ -1,0 +1,23 @@
+#container
+  #flip-toggle.flip-container
+    #dummy
+    .flipper
+      .front
+        #name
+          %h2.kana すずき ひろむ
+          %h1.hiromu 鈴木 智
+        #mail  
+          %adress
+            %p mail:
+            %a{:href => "mailto:hiromu1988@gmail.com"} hiromu1988@gmail.com
+      .back
+        #info
+          %section.first
+            %p 1988年神奈川県生まれ。
+            %p 2013年3月多摩美術大学芸術学科卒業。
+          %section.second
+            %p 広告代理店コスモ・コミュニケーションズでの営業アシスタント業務の傍ら、フリーランスでWebデザイン、コーディング、システム構築などのWeb制作業務を行なっている。
+            %p プログミング全般に興味があり、フロントエンドからサーバーサイドまで、何でも作る。ネイティブアプリケーション開発やUnityなども勉強中。
+  %button.right{onclick: "document.querySelector('#flip-toggle').classList.toggle('hover');"}
+    %span.right
+  %span.down

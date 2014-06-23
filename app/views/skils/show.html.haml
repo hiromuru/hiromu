@@ -1,14 +1,21 @@
-%p#notice= notice
+#container
+  #wrap.exam
+    #skills
+      #namehold
+        = @skil.name
+      #iconhold
+        = image_tag(@skil.image.image.url.to_s, :class => "icon", :alt => @skil.level) 
+      #levelhold{:class => lvlv(@skil.level)}
+  - @skil.exams.each_with_index do |e,i|
+    %div{:class => ["exam", i]}
+      .sicon
+        - e.skils.each do |s|
+          = link_to image_tag(s.image.image.url.to_s, :class => "sicon"), skilpath_path(s.name)
+      .image
+        - e.images.each do |img|
+          = image_tag img.image.url.to_s, :class => "exam", :alt => i
+      .textbox
+        %h1.title= e.title 
+        %section.disc
+          %p= simple_format(e.caption)
 
-#exam
-  - @skil.exams.each do |e|
-    %p= e.title 
-    %p= simple_format(e.caption)
-    %p= simple_format(e.discription)
-    .image
-      - e.images.each do |img|
-        = image_tag img.image.url.to_s
-        
-= link_to 'Edit', edit_skil_path(@skil)
-\|
-= link_to 'Back', skils_path

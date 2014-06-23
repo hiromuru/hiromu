@@ -2,9 +2,15 @@ class SkilsController < ApplicationController
   before_action :set_skil, only: [:edit, :update, :destroy]
 
   # GET /skils
-  # GET /skils.json
+  # GET /skils.jsonrequire "skils_controller"
+  
+  def home
+  end
+  
   def index
     @skils = Skil.all
+    @sk = Skil.find(:all, :conditions => {:sors => "skill"})
+    @sf = Skil.find(:all, :conditions => {:sors => "soft"})
   end
 
   # GET /skils/1
@@ -71,6 +77,6 @@ class SkilsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def skil_params
-      params.require(:skil).permit(:name, :level, :image_attributes => [:image, :_destroy, :id, :parent, :parent_id, :parent_type, :parent_attributes ])
+      params.require(:skil).permit(:name, :level, :sors, :image_attributes => [:image, :_destroy, :id, :parent, :parent_id, :parent_type, :parent_attributes ])
     end
 end

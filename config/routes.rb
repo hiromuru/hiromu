@@ -3,9 +3,10 @@ Hiromu::Application.routes.draw do
 
   resources :skils
   
-  root(:controller => 'skils', :action => 'index')
+  root(:controller => 'skils', :action => 'home')
   
-  get '/:title', :controller => :skils, :action => :show, :as => "skilpath"
+  get 'skills/', :controller => :skils, :action => :index, :as => "skillindex"
+  get 'skills/:title', :controller => :skils, :action => :show, :as => "skilpath"
   get '/all', :controller => :exams, :action => :index, :as => "show_all"
   get '/works/:id', :controller => :exam, :action => :show, :as => "works"
 
