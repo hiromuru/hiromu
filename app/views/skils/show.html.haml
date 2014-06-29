@@ -22,7 +22,8 @@
         %h1.title= e.title
         %section.disc
           %p= simple_format(e.discription)
-        = link_to e.url, e.url, :class => "url"
+        .urldiv
+          = link_to e.url, e.url, :class => "url"
         %p.date= e.c_at
   #but1.button
     /
