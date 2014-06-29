@@ -29,7 +29,6 @@ class ExamsController < ApplicationController
   # GET /exams/1/edit
   def edit
     @skils = Skil.all
-    @exam = Exam.new
     @exam.images.build
     @exam.skils.build
   end
