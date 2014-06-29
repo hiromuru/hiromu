@@ -6,7 +6,11 @@ class ExamsController < ApplicationController
   def index
     @exams = Exam.all
   end
-
+  
+  def all
+    @exams = Exam.all.order("c_at DESC")
+  end
+  
   # GET /exams/1
   # GET /exams/1.json
   def show
@@ -24,6 +28,7 @@ class ExamsController < ApplicationController
 
   # GET /exams/1/edit
   def edit
+    @skils = Skil.all
   end
 
   # POST /exams
@@ -74,6 +79,6 @@ class ExamsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def exam_params
-      params.require(:exam).permit(:title, :caption, :discription,:images_attributes => [:image, :_destroy, :id, :parent, :parent_id, :parent_type, :parent_attributes ], :skils_attributes => [:name], :skil_ids => [])
+      params.require(:exam).permit(:title, :discription, :url, :c_at,:images_attributes => [:image, :_destroy, :id, :parent, :parent_id, :parent_type, :parent_attributes ], :skils_attributes => [:name], :skil_ids => [])
     end
 end

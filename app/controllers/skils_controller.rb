@@ -4,12 +4,10 @@ class SkilsController < ApplicationController
   # GET /skils
   # GET /skils.jsonrequire "skils_controller"
   
-  def home
-  end
-  
   def index
     @skils = Skil.all
     @sk = Skil.find(:all, :conditions => {:sors => "skill"})
+    @sksize = @sk.size
     @sf = Skil.find(:all, :conditions => {:sors => "soft"})
   end
 
@@ -17,6 +15,10 @@ class SkilsController < ApplicationController
   # GET /skils/1.json
   def show
     @skil = Skil.find_by_name(params[:title])
+    @ex = @skil.exams.order("c_at DESC")
+    p = @skil.id
+    @next = Skil.find(:first, :conditions => ["id > ?", p])
+    @prev = Skil.find(:last, :conditions => ["id < ?", p])
   end
 
   # GET /skils/new
@@ -77,6 +79,6 @@ class SkilsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def skil_params
-      params.require(:skil).permit(:name, :level, :sors, :image_attributes => [:image, :_destroy, :id, :parent, :parent_id, :parent_type, :parent_attributes ])
+      params.require(:skil).permit(:name, :level, :sors, :discription, :image_attributes => [:image, :_destroy, :id, :parent, :parent_id, :parent_type, :parent_attributes ])
     end
 end

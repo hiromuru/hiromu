@@ -3,7 +3,6 @@
 %table
   %tr
     %th Title
-    %th Caption
     %th Discription
     %th
     %th
@@ -12,7 +11,6 @@
   - @exams.each do |exam|
     %tr
       %td= exam.title
-      %td= simple_format(exam.caption)
       %td= exam.discription
       %td= link_to 'Show', exam
       %td= link_to 'Edit', edit_exam_path(exam)

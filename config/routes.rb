@@ -3,11 +3,10 @@ Hiromu::Application.routes.draw do
 
   resources :skils
   
-  root(:controller => 'skils', :action => 'home')
+  root(:controller => 'skils', :action => 'index')
   
-  get 'skills/', :controller => :skils, :action => :index, :as => "skillindex"
-  get 'skills/:title', :controller => :skils, :action => :show, :as => "skilpath"
-  get '/all', :controller => :exams, :action => :index, :as => "show_all"
+  get '/skills/:title', :controller => :skils, :action => :show, :as => "skilpath"
+  get '/works/all', :controller => :exams, :action => :all, :as => "all"
   get '/works/:id', :controller => :exam, :action => :show, :as => "works"
 
   # The priority is based upon order of creation: first created -> highest priority.

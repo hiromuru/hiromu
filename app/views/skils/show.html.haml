@@ -1,21 +1,46 @@
 #container
-  #wrap.exam
-    #skills
-      #namehold
-        = @skil.name
-      #iconhold
-        = image_tag(@skil.image.image.url.to_s, :class => "icon", :alt => @skil.level) 
-      #levelhold{:class => lvlv(@skil.level)}
-  - @skil.exams.each_with_index do |e,i|
-    %div{:class => ["exam", i]}
-      .sicon
-        - e.skils.each do |s|
-          = link_to image_tag(s.image.image.url.to_s, :class => "sicon"), skilpath_path(s.name)
-      .image
+  #front
+    %div#wrapper
+      .Sname.ooo
+        %p= @skil.name 
+      .Sicon
+        = image_tag(@skil.image.image.url.to_s, :class => "icon")
+      %div{:class => [lvlv(@skil.level) , "Slevel", "ooo"]} 
+  #back
+    #disc
+      %p= simple_format(@skil.discription)
+  - @ex.each_with_index do |e,i|
+    %div{:class => ["exam", i, "el"], :style => "z-index: #{ 199 - i};"}
+      .Eicon
+        #siconwrap
+          - e.skils.each do |s|
+            = link_to image_tag(s.image.image.url.to_s, :class => "sicon"), skilpath_path(s.name)
+      .Eimage
         - e.images.each do |img|
           = image_tag img.image.url.to_s, :class => "exam", :alt => i
-      .textbox
-        %h1.title= e.title 
+      .Etextbox
+        %h1.title= e.title
         %section.disc
-          %p= simple_format(e.caption)
-
+          %p= simple_format(e.discription)
+        = link_to e.url, e.url, :class => "url"
+        %p.date= e.c_at
+  #but1.button
+    /
+      %span.i
+        %p= all_path
+    %span.a
+    %span.b
+    %span.h
+      %p= root_path
+  #but2.button
+    %span.c
+    %span.d
+    %span.e
+  - if @next
+    #but4.button
+      %span.g
+        %p= skilpath_path(@next.name)
+  - if @prev
+    #but3.button
+      %span.f
+        %p= skilpath_path(@prev.name)

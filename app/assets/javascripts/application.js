@@ -12,5 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.easing.1.3.js
 //= require jquery.transform.js
 //= require_tree .

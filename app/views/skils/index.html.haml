@@ -1,19 +1,40 @@
 #container
-  #wrap
-    #skills
-      #sk
-        %h1 skill
-        - @sk.each do |sk|
-          .sk
-            = image_tag(sk.image.image.url.to_s, :class => "icon", :alt => sk.level, :title => if sk.exams.size != 0 then skilpath_path(sk.name) else "" end )
-            %p= sk.name
-      #sf
-        %h1 software
-        - @sf.each do |sf|
-          .sf
-            = image_tag(sf.image.image.url.to_s, :class => "icon", :alt => sf.level, :title => if sf.exams.size != 0 then skilpath_path(sf.name) else "" end)
-            %p= sf.name 
-      #namehold
-      #iconhold
-      #levelhold
-  %span.down
+  #front
+    #name
+      %h2.kana すずき ひろむ
+      %h1.hiromu 鈴木 智
+    #mail  
+      %adress
+        %p mail:
+        %a{:href => "mailto:hiromu1988@gmail.com"} hiromu1988@gmail.com
+  #back
+    #info
+      %section.first
+        %p 1988年神奈川県生まれ。
+        %p 2013年3月多摩美術大学芸術学科卒業。
+      %section.second
+        %p 広告代理店コスモ・コミュニケーションズでの営業アシスタント業務の傍ら、フリーランスでWebデザイン、コーディング、システム構築などのWeb制作業務を行なっている。
+        %p プログミング全般に興味があり、フロントエンドからサーバーサイドまで、何でも作る。ネイティブアプリケーション開発やUnityなども勉強中。
+  - @sk.each_with_index do |sk,i|
+    %a{:href => "#", :class => "t"}
+      %div{:class => [i, "skill", "el"], :style => "z-index: #{ 199 - i};", :id => if sk.exams.size != 0 then skilpath_path(sk.name) else "#" end} 
+        .Sname
+          %p= sk.name 
+        .Sicon
+          = image_tag(sk.image.image.url.to_s, :class => "icon")
+        %div{:class => [lvlv(sk.level) , "Slevel"]} 
+  - @sf.each.with_index(@sksize) do |sf,ii|
+    %a{:href => "#", :class => "t"}
+      %div{:class => [ii, "soft", "el"], :style => "z-index: #{ 199 - ii};", :id => if sf.exams.size != 0 then skilpath_path(sf.name) else "#" end}
+        .Sname
+          %p= sf.name 
+        .Sicon
+          = image_tag(sf.image.image.url.to_s, :class => "icon")
+        %div{:class => [lvlv(sf.level) , "Slevel"]}  
+  #but1.button
+    %span.a
+    %span.b
+  #but2.button
+    %span.c
+    %span.d
+    %span.e

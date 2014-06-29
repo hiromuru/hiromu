@@ -17,10 +17,13 @@
     = f.label :title
     = f.text_field :title
   .field
-    = f.label :caption
-    = f.text_area :caption
-  .field
     = f.label :discription
     = f.text_area :discription
+  .field
+    = f.label :url
+    = f.text_field :url
+  .field
+    = f.label :date
+    = f.date_select :c_at, :use_month_numbers => true, :discard_day => true 
   .actions
     = f.submit 'Save'
