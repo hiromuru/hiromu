@@ -1,0 +1,32 @@
+#but5.button
+  %span.j
+  %span.h
+    %p= root_path
+  %span.k
+#container
+  #enban
+    .bar.o0{:style => "z-index: 200;"}
+      #front.el
+        #name
+          %h2.kana すずき ひろむ
+          %h1.hiromu 鈴木 智
+        #mail  
+          %adress
+            %p mail:
+            %a{:href => "mailto:hiromu1988@gmail.com"} hiromu1988@gmail.com
+    - @exams.each.with_index(1) do |e,i|
+      .bar{:class =>"#{"o" + i.to_s}", :style => "z-index: #{ 199 - i};"}
+        %div{:class => ["exam", "#{"o" + i.to_s}", "el"]}
+          .Eicon
+            #siconwrap
+              - e.skils.each do |s|
+                = link_to image_tag(s.image.image.url.to_s, :class => "sicon"), skilpath_path(s.name)
+          .Eimage
+            - e.images.each do |img|
+              = image_tag img.image.url.to_s, :class => "exam", :alt => i
+          .Etextbox
+            %h1.title= e.title
+            %section.disc
+              %p= simple_format(e.discription)
+            = link_to e.url, e.url, :class => "url"
+            %p.date= e.c_at
