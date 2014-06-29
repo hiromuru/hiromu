@@ -461,7 +461,7 @@ h1.title {
 }
 
 .disc {
-  font-size: 13pt;
+  font-size: 10pt;
   position: relative;
   top: -30px;
   width: 75%;
@@ -570,6 +570,11 @@ span.g {
   background-image: image-url('all.png');
   position: absolute;
   top: -60px;
+}
+
+div#back {
+  color: #FFF;
+  padding: 200px 30px 30px;
 }
 
 //all--------------------------------------------------------------
