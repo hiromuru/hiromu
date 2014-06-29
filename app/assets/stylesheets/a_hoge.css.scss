@@ -482,8 +482,10 @@ img.exam {
 }
 
 div.urldiv {
+  display: inline;
   position: relative;
   top: -20px;
+  height: 20px;
   width: 290px;
   overflow: hidden;
 }
