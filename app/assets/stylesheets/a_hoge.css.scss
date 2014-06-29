@@ -481,12 +481,19 @@ img.exam {
   cursor: pointer;
 }
 
+div.urldiv {
+  position: relative;
+  top: -20px;
+  width: 290px;
+  overflow: hidden;
+}
+
 p.date {
   font-size: 10pt;
   margin: 0px;
   width: 100%;
   position: relative;
-  margin-top: 15px;
+  margin-top: 0px;
 }
 
 .url {
