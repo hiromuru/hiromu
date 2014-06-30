@@ -29,6 +29,7 @@ class SkilsController < ApplicationController
 
   # GET /skils/1/edit
   def edit
+    @skil.build_image
   end
 
   # POST /skils
