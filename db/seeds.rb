@@ -15,4 +15,5 @@ Exam.create(:title => 'SHINOBI CART',:discription => '海外向け買い物代�
 Exam.create(:title => 'climb.rock',:discription => 'フリークライミングポータルサイト。データベース、動的コンテンツにWordPressを使用。データ収集が進まず、未だ開始できず。',:c_at =>'2013-07-01') 
 Exam.create(:title => 'HAPPY SPACE',:discription => 'SNS型マッチングアプリのパイロット版制作。WordPressプラグイン"buddypress"をベースに制作。',:c_at => '2013-12-01')
 Exam.create(:title => 'ポートフォリオ専門CMS',:discription => 'サーバーサイド言語を勉強する為、ポートフォリオサイト構築用のCMSを開発。',:c_at =>'2014-05-01')
-Exam.create(:title => 'SuzukiHiromu ',:discription => '自身のポートフォリオサイト。',:c_at => '2014-06-01',:url => 'http://hiromu-portfolio.herokuapp.com')
+Exam.create(:title => 'SuzukiHiromu',:discription => '自身のポートフォリオサイト。',:c_at => '2014-06-01',:url => 'http://hiromu-portfolio.herokuapp.com')
+Exam.create(:title => 'out of web',:discription => 'web以外でも、作れそう、面白そうと思えば何でもまず作ってみる。')
