@@ -127,5 +127,14 @@ $(function(){
     });
   });
   
+  $('img.exam').click(function({
+    $(this).css({
+      "width":"auto",
+      "margin":"0px auto",
+      "z-index":"1000"
+    });
+    $(body).html("<div class"black" style="background-color: #EEEEF0; width: 100%; height: 100%; position: fixed; top: 0px; left: 0px; z-index: 999;" ></div>");
+    
+  }));
   
 }, (jQuery));

@@ -425,6 +425,7 @@ div.Eicon {
   width: 45px;
   right: 15px;
   bottom: 10px;
+  z-index: 200;
 }
 
 .yoko div div#siconwrap {
@@ -450,6 +451,7 @@ h1.title {
   left: -49px;
   font-size: 18px;
   color: #FFF;
+  z-index: 100;
   -webkit-transform-origin: 100% 100%;
   -moz-transform-origin: 100% 100%;
   -o-transform-origin: 100% 100%;
