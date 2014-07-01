@@ -29,7 +29,8 @@ gem 'jquery-rails'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
-gem 'fog'
+gem 'nokogiri'
+gem 'fog', '~> 1.22.1'
 gem 'carrierwave'
 gem 'rmagick', :require => 'RMagick'
 
